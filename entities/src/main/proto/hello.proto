@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "com.venkatasudha.entities";
+option java_outer_classname = "HelloEntity";
+option deprecated = true; //enable this to mark class as deprecated
+
+service HelloWorldService {
+  rpc hello(HelloRequest) returns (HelloResponse) {}
+}
+
+message HelloRequest {
+  string text = 1 [deprecated = true];
+  string newText = 2;
+}
+
+message HelloResponse {
+  string text = 1;
+}

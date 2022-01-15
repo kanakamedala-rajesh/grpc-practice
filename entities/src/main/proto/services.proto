@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "entities.proto";
+
+option java_package = "com.venkatasudha.services";
+option java_outer_classname = "ServicesProto";
+
+service StudentService {
+  rpc getStudent(google.protobuf.Empty) returns(com.venkatasudha.entities.Student) {}
+
+  rpc getStudentByID(google.protobuf.Int32Value) returns(com.venkatasudha.entities.Student) {}
+}
