@@ -11,4 +11,10 @@ service StudentService {
   rpc getStudent(google.protobuf.Empty) returns(com.venkatasudha.entities.Student) {}
 
   rpc getStudentByID(google.protobuf.Int32Value) returns(com.venkatasudha.entities.Student) {}
+
+  rpc getStudentList(google.protobuf.Int32Value) returns(stream com.venkatasudha.entities.Student) {}
+
+  rpc getStudentByStream(stream google.protobuf.Int32Value) returns(com.venkatasudha.entities.Student) {}
+
+  rpc getStudentsListByStream(stream google.protobuf.Int32Value) returns(stream com.venkatasudha.entities.Student) {}
 }
